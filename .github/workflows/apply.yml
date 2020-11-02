@@ -42,12 +42,12 @@
 #       with:
 #         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-name: 'Push'
+name: 'Deploy'
 
 on:
   push:
     branches:
-    - master
+    - main
 
 jobs:
   terraform:
