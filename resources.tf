@@ -27,7 +27,7 @@ resource "helm_release" "ingress" {
     name  = "controller.service.annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-enable-proxy-protocol"
     value = "true"
   }
-  
+
   set {
     name  = "controller.config.use-proxy-protocol"
     value = "true"
@@ -41,7 +41,7 @@ data "kubernetes_service" "nginx-ingress-controller" {
     name = "ingress-nginx-ingress-controller"
   }
   depends_on = [helm_release.ingress]
-} 
+}
 
 
 ## Cloudflare DNS Record
