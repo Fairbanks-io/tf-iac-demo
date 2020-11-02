@@ -47,7 +47,7 @@ name: 'Push'
 on:
   push:
     branches:
-    - master
+    - main
 
 jobs:
   terraform:
