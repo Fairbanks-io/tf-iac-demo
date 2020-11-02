@@ -3,7 +3,7 @@ resource "digitalocean_kubernetes_cluster" "k8s" {
   name         = var.do_cluster_name
   region       = "sfo2"
   auto_upgrade = false
-  version      = "1.18.8-do.1"
+  version      = "1.18.10-do.1"
 
   node_pool {
     name       = "worker-pool"
