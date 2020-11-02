@@ -42,14 +42,14 @@
 #       with:
 #         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-name: 'Terraform - Plan'
+name: 'Pull Request'
 
 on:
   pull_request:
 
 jobs:
   terraform:
-    name: 'Terraform'
+    name: 'Terraform - Plan'
     runs-on: ubuntu-latest
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
