@@ -57,10 +57,11 @@ resource "cloudflare_record" "demo" {
 
 ## Demo app release
 resource "helm_release" "docker-node-app" {
-  repository = "https://jonfairbanks.github.io/helm-charts"
-  chart      = "docker-node-app"
-  name       = "docker-node-app"
-  namespace  = "docker-node-app"
+  repository       = "https://jonfairbanks.github.io/helm-charts"
+  chart            = "docker-node-app"
+  name             = "docker-node-app"
+  namespace        = "docker-node-app"
+  create_namespace = "true"
   set {
     name  = "ingress.hosts[0].host"
     value = cloudflare_record.demo.hostname
