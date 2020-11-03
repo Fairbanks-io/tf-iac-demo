@@ -61,6 +61,7 @@ resource "helm_release" "docker-node-app" {
   chart      = "docker-node-app"
   name       = "docker-node-app"
   namespace  = "docker-node-app"
+  create_namespace = "true"
   set {
     name  = "ingress.hosts[0].host"
     value = cloudflare_record.demo.hostname
