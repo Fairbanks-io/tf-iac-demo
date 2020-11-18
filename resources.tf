@@ -15,8 +15,8 @@ resource "digitalocean_kubernetes_cluster" "k8s" {
 
 ## Nginx Ingress/Load Balancer
 resource "helm_release" "ingress" {
-  repository = "https://kubernetes-charts.storage.googleapis.com"
-  chart      = "nginx-ingress"
+  repository = "https://kubernetes.github.io/ingress-nginx"
+  chart      = "ingress-nginx"
   name       = "ingress"
   set {
     name  = "controller.service.name"
