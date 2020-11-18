@@ -18,10 +18,6 @@ resource "helm_release" "ingress" {
   repository = "https://kubernetes.github.io/ingress-nginx"
   chart      = "ingress-nginx"
   name       = "ingress"
-  set {
-    name  = "controller.service.name"
-    value = "nginx-ingress-controller"
-  }
 
   set {
     name  = "controller.service.annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-enable-proxy-protocol"
@@ -38,7 +34,7 @@ resource "helm_release" "ingress" {
 
 data "kubernetes_service" "nginx-ingress-controller" {
   metadata {
-    name = "ingress-nginx-ingress-controller"
+    name = "ingress-ingress-nginx-controller"
   }
   depends_on = [helm_release.ingress]
 }
